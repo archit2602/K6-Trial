@@ -4,6 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: minikube start
       - run: helm install prometheus prometheus-community/prometheus -f values.yaml
       - run: helm repo add grafana https://grafana.github.io/helm-charts
       - run: helm install grafana grafana/grafana
